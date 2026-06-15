@@ -13,7 +13,6 @@ export function useAuthListener() {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
       setLoading(false);
-      console.log("유저 로딩 성공", user);
     });
 
     return () => unsubscribe();
