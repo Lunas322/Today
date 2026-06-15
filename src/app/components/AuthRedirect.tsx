@@ -15,20 +15,18 @@ export default function AuthRedirect({
   const router = useRouter();
   const pathname = usePathname();
 
-useEffect(() => {
-  if (loading) return;
+  useEffect(() => {
+    if (loading) return;
 
-  const isLoginPage = pathname.startsWith('/login')
-  const isHomePage = pathname.startsWith('/home')
-    if(user && isLoginPage){
-        router.replace('/home')
-    } 
-    if(!user&&isHomePage){
-        router.push('/login')
+    const isLoginPage = pathname.startsWith("/login");
+    const isHomePage = pathname.startsWith("/home");
+    if (user && isLoginPage) {
+      router.replace("/home");
     }
-}
-, [user, loading, pathname]);
-
+    if (!user && isHomePage) {
+      router.replace("/login");
+    }
+  }, [user, loading, pathname, router]);
 
   return <>{children}</>;
 }
