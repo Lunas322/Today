@@ -2,7 +2,7 @@ import DiaryInput from "./DiaryInput";
 
 export default function DiaryNewPage() {
   return (
-    <main className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-10">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-10">
 
       <section className="w-full max-w-2xl bg-white rounded-3xl shadow-lg p-6 flex flex-col">
 
@@ -18,6 +18,6 @@ export default function DiaryNewPage() {
         <DiaryInput/>
 
       </section>
-    </main>
+    </div>
   );
 }
